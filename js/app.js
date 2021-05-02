@@ -46,5 +46,3 @@ function handleClick() {
 // recognize when a date filter click happens
 d3.selectAll("#filter-btn").on("click", handleClick);
 
-// Build the table when the page loads
-buildTable(tableData);
