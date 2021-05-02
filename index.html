@@ -66,19 +66,34 @@
                     <form class="bg-dark">
                         <p>Filter Search</p>
                         <ul class="list-group bg-dark">
+                                <!--type="button" tells the browser that, by default, the button does nothing. However, our custom JavaScript script will overwrite the default behavior—as if the button is waiting for instruction.-->
                             <!-- add the list items: one for the input, one for the button-->
                             <li class="list-group-item bg-dark">
-                                <label for="date">Enter Date</label>
+                                <label for="date">Enter Date</label> <br>
                                 <input type="text" placeholder="1/10/2010" id="datetime" />
                                 <!-- There are three things to keep in mind when looking at this input:
                                     The type="text" means that the code will look for text to be input.
                                     The placeholder is an example of a date to search, so users know both the location and the format to use when inputting a date.
                                     The id="datetime" is what our JavaScript code will look for when the button is clicked and the function is executed.-->
                             </li>
-                            <li class="list-group-item">
-                                <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
-                                <!--type="button" tells the browser that, by default, the button does nothing. However, our custom JavaScript script will overwrite the default behavior—as if the button is waiting for instruction.-->
+                            <li class="list-group-item bg-dark">
+                                <label for="city">Enter City</label> <br>
+                                <input type="text" placeholder="national city" id="city" />
                             </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="state">Enter State</label> <br>
+                                <input type="text" placeholder="ca" id="state" />
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="country">Enter Country</label> <br>
+                                <input type="text" placeholder="us" id="country" />
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="shape">Enter Shape</label> <br>
+                                <input type="text" placeholder="disk" id="shape" />
+                            </li>
+                            <li class="list-group-item bg-dark"></li>
+                            <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
                         </ul>
                     </form>
                 </div>
