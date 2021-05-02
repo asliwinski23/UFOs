@@ -25,3 +25,26 @@ fucntion buildTable(data) {
         });
     });
 }
+
+// build a function to create a filter by date button for the table
+function handleClick() {
+    // use d3 to create a couple of variables to hold our date data, both filtered and unfiltered
+    let date = d3.select("#datetime").property("value");
+    let filteredData = tableData;
+
+    // if a date is filtered by the user, filter the data to only show sightings on that date
+    if (date) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
+
+    // Rebuild the table using the filtered data
+    // @NOTE: If no date was entered, then filteredData will
+    // just be the original tableData.
+  buildTable(filteredData);
+}
+
+// recognize when a date filter click happens
+d3.selectAll("#filter-btn").on("click", handleClick);
+
+// Build the table when the page loads
+buildTable(tableData);
