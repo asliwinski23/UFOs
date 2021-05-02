@@ -5,7 +5,7 @@ const tableData = data;
 var tbody = d3.select("tbody");
 
 // build a function to loop through the data and add it's contents to a table
-fucntion buildTable(data) {
+function buildTable(data) {
     // clear the data  If we didn't clear existing data first, then we would find ourselves reinserting
     // data that already exists, thus creating duplicates and making a bit of a mess. 
     // It's good practice to clear the existing data first to give ourselves a clean slate to work with.
@@ -35,14 +35,15 @@ function handleClick() {
     // if a date is filtered by the user, filter the data to only show sightings on that date
     if (date) {
         filteredData = filteredData.filter(row => row.datetime === date);
-    };
+    }
 
     // Rebuild the table using the filtered data
     // @NOTE: If no date was entered, then filteredData will
     // just be the original tableData.
-  buildTable(filteredData);
+    buildTable(filteredData);
 }
 
 // recognize when a date filter click happens
 d3.selectAll("#filter-btn").on("click", handleClick);
 
+buildTable(tableData);
